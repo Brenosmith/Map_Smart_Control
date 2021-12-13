@@ -50,12 +50,13 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 ```
-Extra: Comandos interessantes:
-- Criar superuser para o site:
+- Extra: Comandos interessantes:
+
+Criar superuser para o site:
 ```python
 manage.py createsuperuser
 ```
 
 ---
 
-Passos para utilização da solução IoT:
+## Passos para utilização da solução IoT:
