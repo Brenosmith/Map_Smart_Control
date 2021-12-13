@@ -13,7 +13,9 @@ Desenvolvimento backend Python com Django, frontend com html, css e JavaScript
 5. Criar um novo projeto Django: comando: ‘django-admin startproject nome_do_projeto’;
 6. Com a hierarquia já criada, baixar arquivos deste repositório e substituir os existentes ou colar os novos copiando a hierarquia abaixo (obs.: neste exemplo o projeto chama mysite);
 
-![alt text](https://github.com/Brenosmith/Map_Smart_Control/blob/main/hierarquia_projeto.png)
+<p align="center">
+  <img src="https://github.com/Brenosmith/Map_Smart_Control/blob/main/hierarquia_projeto.png">
+</p>
 
 8. Acesse o diretório com o nome do projeto criado e rode o seguinte comando para iniciar o servidor: ‘python manage.py runserver’;
 9. Para acessar a plataforma acesse o caminho indicado no prompt.
