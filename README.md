@@ -33,7 +33,7 @@ django-admin startproject nome_do_projeto
 python manage.py startapp main
 ```
 
-7. Com a hierarquia já criada, baixar arquivos deste repositório da pasta Arquivos e substituir os existentes ou colar os novos copiando a hierarquia abaixo (obs.: neste exemplo da imagem o projeto chama mysite);
+7. Com a hierarquia já criada, baixar arquivos deste repositório da pasta Plataforma e substituir os existentes ou colar os novos copiando a hierarquia abaixo (obs.: neste exemplo da imagem o projeto chama mysite);
 
 <p align="center">
   <img src="https://github.com/Brenosmith/Map_Smart_Control/blob/main/hierarquia_projeto.png">
