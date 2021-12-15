@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper orange darken-3">
+      <a href="/" class="brand-logo"> <img class="responsive-img" alt=" " style="margin-left: 10px;"
+                                           src="/media/logo_map_final_bw.png" width="100"/></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+          {% if user.is_superuser %}
+            <li><a href="/account">{{user.username}}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/add_equipment">Adicionar Equipamento</a></li>
+            <li><a href="/add_status">Adicionar Status</a></li>
+          {% else %}
+            <li><a href="/info">{{user.username}}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/add_status">Adicionar Status</a></li>
+          {% endif %}
+        {% else %}
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</nav>
