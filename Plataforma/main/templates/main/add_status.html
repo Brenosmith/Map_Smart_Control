@@ -1,0 +1,31 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+	<h1><p style="font-size:30px">Adicionar Novo Status</p></h1>
+
+		<hr style="width:100%;text-align:left;margin-left:0">
+
+			<div>
+				<p style="font-size:15px">Passos:</p>
+				<p style="font-size:10px">1 - Dê um título que resume a atualização.</p>
+				<p style="font-size:10px">2 - Selecione a categoria e tipo de equipamento.</p>
+				<p style="font-size:10px">3 - Descreva em detalhes o status atual/o que foi realizado.</p>
+				<p style="font-size:10px">4 - Adicione uma foto caso seja necessário.</p>
+			</div>
+
+		<hr style="width:100%;text-align:left;margin-left:0">
+
+		<form method="POST" enctype="multipart/form-data">
+
+			{% csrf_token %}
+			{{form.as_p}}
+
+			<br>
+
+			<button class="btn" type="submit">Adicionar</button>
+
+		</form>
+
+		<br>
+<!--	If you don´t already have an account, <a href="/register"><strong>register</strong></a> for one.-->
+{% endblock %}

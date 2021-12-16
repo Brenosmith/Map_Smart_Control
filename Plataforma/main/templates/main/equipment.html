@@ -1,0 +1,32 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div class="row">
+        <p style="font-size:20px">Selecione o equipamento desejado:</p>
+            {% if equipments %}
+                {% for item in equipments %}
+                    {% if username == item.equipment_user_username or user.is_superuser %}
+                        <div class="col-lg-4 d-flex align-items-stretch">
+                            <a href="{{item.equipment_slug}}" style="color:#000">
+                                <div class="card hoverable">
+                                    <div class="card-content">
+                                        <div class="card-title" style="font-size:18px">{{item.equipment_name}}</div>
+                                        <p>ID: {{item.equipment_id}}</p>
+                                        <p>{{item.equipment_summary}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p style="font-size:14px">Não há equipamentos cadastrados para sua empresa. Abra uma solicitação.</p>
+            {% endif %}
+    </div>
+{% else %}
+        <p style="font-size:18px">Usuário não logado. Faça o login para acessar seus dados.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+                <div class="row">
+                    <p style="font-size:20px">Status geral do equipamento:</p>
+                    <div class="row">
+                        {% if equipment %}
+                            {% for item in equipment %}
+                                <div class="col s10 m10 l10">
+                                        <div class="card hoverable orange darken-0">
+                                            <div class="card-content">
+                                                <div class="card-title"><b>{{item.equipment_name}}</b></div>
+                                                <p><b>ID:</b> {{item.equipment_id}}</p>
+                                                <p><b>Descrição:</b> {{item.equipment_summary}}</p>
+                                                <p><b>Status atual:</b> {{item.equipment_status}}</p>
+                                                <p><b>Data de início:</b> {{item.equipment_published}}</p>
+                                                <p><b>Empresa Terceira:</b> {{item.equipment_company}}</p>
+                                            </div>
+                                        </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p style="font-size:14px">Nehnum equipamento cadastrado.</p>
+                        {% endif %}
+                    </div>
+                    <p style="font-size:20px">Etapas e atualizações realizadas:</p>
+                    {% if status_ %}
+                        {% for item2 in status_ %}
+                            <div class="col s10 m10 l10">
+                                <div class="card hoverable">
+                                    <div class="card-content">
+                                        <div class="card-title">{{item2.status_title}}</div>
+                                        <p style="font-size:70%">Publicado {{item2.status_published}}</p>
+                                        <hr style="width:100%;text-align:left;margin-left:0">
+                                        {{item2.status_content|safe}}
+                                        {% if item2.status_image.url != null %}
+                                            <hr style="width:100%;text-align:left;margin-left:0">
+                                            <p class="post_image"><img src="{{ item2.status_image.url }}" alt="" width="100%"></p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p style="font-size:14px">Sem atualizações disponíveis.</p>
+                    {% endif %}
+                </div>
+    {% else %}
+        <p style="font-size:18px">Usuário não logado. Faça o login para acessar seus dados.</p>
+    {% endif %}
+
+{% endblock %}
