@@ -213,7 +213,7 @@ status atual.
 Obrigado'''
                 sent_by = Superuser_mail
                 # sent_to = mail_to_email
-                sent_to = ['ferraz.breno.g@gmail.com']
+                sent_to = ['teste.teste@gmail.com']
 
                 try:
                     if not (sent_to is None):
@@ -249,7 +249,7 @@ pedimos por gentileza que acesse a plataforma o quanto antes e informe o status 
 Obrigado'''
             sent_by = Superuser_mail
             # sent_to = mail_to_email2
-            sent_to = ['ferraz.breno.g@gmail.com']
+            sent_to = ['teste.teste@gmail.com']
 
             try:
                 if not (sent_to is None):
